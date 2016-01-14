@@ -92,4 +92,10 @@ public class ContactTest {
     assertEquals("1980-03-15", contact.getBirthday().toString());
   }
 
+  @Test
+  public void birthday_returnsNullWhenBirthdayNotSet_null() {
+    Contact contact = new Contact("John", "Doe");
+    assertEquals(null, contact.getBirthday());
+  }
+
 }
