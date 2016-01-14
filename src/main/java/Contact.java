@@ -5,12 +5,13 @@ public class Contact {
 
   private String mFirstName;
   private String mLastName;
-  // private ArrayList<Phone> mPhoneNumbers;
+  private ArrayList<Phone> mPhoneNumbers;
   // private ArrayList<Email> mEmailAddresses;
 
   public Contact(String firstName, String lastName) {
     mFirstName = firstName;
     mLastName = lastName;
+    mPhoneNumbers = new ArrayList<Phone>();
     mInstances.put((mInstances.size() + 1), this);
   }
 
