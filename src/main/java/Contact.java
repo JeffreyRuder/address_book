@@ -47,4 +47,12 @@ public class Contact {
     return mLastName;
   }
 
+  public void addPhone(Phone phone) {
+    mPhoneNumbers.add(phone);
+  }
+
+  public ArrayList<Phone> getAllPhones() {
+    return mPhoneNumbers;
+  }
+
 }

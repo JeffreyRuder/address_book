@@ -58,4 +58,12 @@ public class ContactTest {
     assertTrue(Contact.getAll().isEmpty());
   }
 
+  @Test
+  public void addPhone_addsPhoneToContact() {
+    Contact contact = new Contact("John", "Doe");
+    Phone phone = new Phone("555", "8675309", "Home");
+    contact.addPhone(phone);
+    assertTrue(contact.getAllPhones().contains(phone));
+  }
+
 }
