@@ -3,6 +3,9 @@ import static org.junit.Assert.*;
 
 public class ContactTest {
 
+  @Rule
+  public ClearRule clearRule = new ClearRule();
+
   @Test
   public void contact_instantiatesCorrectly_true() {
     Contact johnDoe = new Contact("John", "Doe");
@@ -25,8 +28,15 @@ public class ContactTest {
   public void getAll_returnsAllContacts_true() {
     Contact johnDoe = new Contact("John", "Doe");
     Contact janeRoe = new Contact("Jane", "Roe");
-    assertTrue(Contact.getAll().contains(johnDoe));
-    assertTrue(Contact.getAll().contains(janeRoe));
+    assertTrue(Contact.getAll().containsValue(johnDoe));
+    assertTrue(Contact.getAll().containsValue(janeRoe));
+  }
+
+  @Test
+  public void getID_returnsCorrectID_2() {
+    Contact johnDoe = new Contact("John", "Doe");
+    Contact janeRoe = new Contact("Jane", "Roe");
+    assertEquals((Integer)2, (Integer)janeRoe.getID());
   }
 
   @Test
@@ -42,10 +52,10 @@ public class ContactTest {
   }
 
   @Test
-  public void clear_clearsContactsFromArrayList_0() {
+  public void clear_clearsContactsFromArrayList_true() {
     Contact contact = new Contact("John", "Doe");
     Contact.clear();
-    assertEquals(Contact.getAll().size(), 0);
+    assertTrue(Contact.getAll().isEmpty());
   }
 
 }
