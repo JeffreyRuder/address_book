@@ -9,12 +9,14 @@ public class Contact {
   private LocalDate mBirthday;
   private ArrayList<Phone> mPhones;
   private ArrayList<Email> mEmails;
+  private ArrayList<Address> mAddresses;
 
   public Contact(String firstName, String lastName) {
     mFirstName = firstName;
     mLastName = lastName;
     mPhones = new ArrayList<Phone>();
     mEmails = new ArrayList<Email>();
+    mAddresses = new ArrayList<Address>();
     mInstances.put((mInstances.size() + 1), this);
   }
 
@@ -72,6 +74,14 @@ public class Contact {
 
   public LocalDate getBirthday() {
     return mBirthday;
+  }
+
+  public void addAddress(Address address) {
+    mAddresses.add(address);
+  }
+
+  public ArrayList<Address> getAllAddresses() {
+    return mAddresses;
   }
 
 }
