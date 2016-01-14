@@ -66,4 +66,12 @@ public class ContactTest {
     assertTrue(contact.getAllPhones().contains(phone));
   }
 
+  @Test
+  public void addEmail_addsEmailToContact() {
+    Contact contact = new Contact("John", "Doe");
+    Email email = new Email("test@testerson.com", "Work");
+    contact.addEmail(email);
+    assertTrue(contact.getAllEmails().contains(email));
+  }
+
 }

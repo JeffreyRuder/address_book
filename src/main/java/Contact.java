@@ -5,13 +5,14 @@ public class Contact {
 
   private String mFirstName;
   private String mLastName;
-  private ArrayList<Phone> mPhoneNumbers;
-  // private ArrayList<Email> mEmailAddresses;
+  private ArrayList<Phone> mPhones;
+  private ArrayList<Email> mEmails;
 
   public Contact(String firstName, String lastName) {
     mFirstName = firstName;
     mLastName = lastName;
-    mPhoneNumbers = new ArrayList<Phone>();
+    mPhones = new ArrayList<Phone>();
+    mEmails = new ArrayList<Email>();
     mInstances.put((mInstances.size() + 1), this);
   }
 
@@ -48,11 +49,19 @@ public class Contact {
   }
 
   public void addPhone(Phone phone) {
-    mPhoneNumbers.add(phone);
+    mPhones.add(phone);
   }
 
   public ArrayList<Phone> getAllPhones() {
-    return mPhoneNumbers;
+    return mPhones;
+  }
+
+  public void addEmail(Email email) {
+    mEmails.add(email);
+  }
+
+  public ArrayList<Email> getAllEmails() {
+    return mEmails;
   }
 
 }
