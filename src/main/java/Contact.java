@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.*;
 
 public class Contact {
@@ -5,6 +6,7 @@ public class Contact {
 
   private String mFirstName;
   private String mLastName;
+  private LocalDate mBirthday;
   private ArrayList<Phone> mPhones;
   private ArrayList<Email> mEmails;
 
@@ -62,6 +64,14 @@ public class Contact {
 
   public ArrayList<Email> getAllEmails() {
     return mEmails;
+  }
+
+  public void setBirthday(LocalDate birthday) {
+    mBirthday = birthday;
+  }
+
+  public LocalDate getBirthday() {
+    return mBirthday;
   }
 
 }

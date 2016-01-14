@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 import org.junit.*;
 import static org.junit.Assert.*;
 
@@ -72,6 +74,14 @@ public class ContactTest {
     Email email = new Email("test@testerson.com", "Work");
     contact.addEmail(email);
     assertTrue(contact.getAllEmails().contains(email));
+  }
+
+  @Test
+  public void addBirthday_addsBirthdayToContact() {
+    Contact contact = new Contact("John", "Doe");
+    LocalDate birthday = LocalDate.of(1980, 3, 15);
+    contact.setBirthday(birthday);
+    assertEquals(birthday, contact.getBirthday());
   }
 
 }
