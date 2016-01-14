@@ -84,4 +84,12 @@ public class ContactTest {
     assertEquals(birthday, contact.getBirthday());
   }
 
+  @Test
+  public void birthday_correctlyDisplaysAsString() {
+    Contact contact = new Contact("John", "Doe");
+    LocalDate birthday = LocalDate.of(1980, 3, 15);
+    contact.setBirthday(birthday);
+    assertEquals("1980-03-15", contact.getBirthday().toString());
+  }
+
 }
