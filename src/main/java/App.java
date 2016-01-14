@@ -34,11 +34,14 @@ public class App {
         get("/contacts/:id", (request, response) -> {
           HashMap<String, Object> model = new HashMap<String, Object>();
 
+          Contact contact = Contacts.find(Integer.parseInt(request.params(":id")))
+
+          model.put("contact", contact)
           model.put("contacts", Contact.all());
 
           model.put("template", "templates/contacts.vtl");
           return new ModelAndView(model, layout);
-        })
+        }, new VelocityTemplateEngine());
 
         //ROUTES: Changing Resources
 
