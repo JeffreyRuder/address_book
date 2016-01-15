@@ -17,10 +17,18 @@ This is an address book that holds contact information.
 ## Opportunities for Refactoring
 
 * Refactor using classes from the Java Class Library instead of custom Email, Address, and Phone classes.
-* Rework birthday input form to use `date` HTML attribute.
+* Rework birthday input forms to use more appropriate HTML attributes.
 * Add features to delete contacts and contact information.
 * Improve CSS styling.
 
 ## Technologies Used
 
 Java, Spark, JUnit, FluentLenium, Velocity, Bootstrap
+
+## License
+
+MIT License. See LICENSE.md for details.
+
+## Copyright
+
+Copyright (c) 2016 Jeffrey Ruder
