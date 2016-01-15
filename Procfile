@@ -1,1 +1,1 @@
-web: ./build/install/todo-list/bin/address_book
+web: ./build/install/address_book/bin/address_book
