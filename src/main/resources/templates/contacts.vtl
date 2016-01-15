@@ -1,6 +1,10 @@
 <h1>Address Book</h1>
 <h2>All Contacts</h2>
-<p>Select a contact to review or add contact information.</p>
+#if ($contacts.size() == 0)
+    <p>No contacts have been added yet. Click Add a New Contact below to add one.</p>
+#else
+    <p>Select a contact to review or add contact information.</p>
+#end
 <div class="contacts-well">
   <ul>
   #foreach ( $key in $contacts.keySet() )
