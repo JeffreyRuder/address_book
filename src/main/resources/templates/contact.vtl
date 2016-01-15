@@ -1,63 +1,64 @@
 <h1>Address Book</h1>
 <h2>Contact Information for $contact.getFirst() $contact.getLast()</h2>
 
-<h3>Phone Numbers</h3>
-#if ($contact.getAllPhones())
-  <div class="phone-well">
-    <table class="table table-hover">
+<div class="phone well">
+  <table class="table table-hover">
+    <thead>
       <tr>
         <th>Area Code</th>
         <th>Number</th>
         <th>Type</th>
       </tr>
+    </thead>
+    <tbody>
       #foreach ($phone in $contact.getAllPhones())
-        <a href="tel:$phone.getAreaCode()$phone.getNumber()">
           <tr>
             <td>$phone.getAreaCode()</td>
             <td>$phone.getNumber()</td>
             <td>$phone.getType()</td>
           </tr>
-        </a>
       #end
-  </div>
-#end
+    </tbody>
+  </table>
+</div>
 <a href="/contacts/$contact.getID()/addphone">
     <h4>Add a New Phone Number</h4>
 </a>
 
-<h3>Email Addresses</h3>
-#if ($contact.getAllEmails())
-  <div class="email-well">
-    <table class="table table-hover">
+<div class="email well">
+  <table class="table table-hover">
+    <thead>
       <tr>
         <th>Email Address</th>
         <th>Type</th>
       </tr>
-      #foreach ($email in $contact.getAllEmails())
-        <a href="mailto:$email.getAddress()">
-          <tr>
-            <td>$email.getAddress()</td>
-            <td>$email.getType()</td>
-          </tr>
-        </a>
-      #end
-  </div>
-#end
+    </thead>
+    <tbody>
+    #foreach ($email in $contact.getAllEmails())
+        <tr>
+          <td><a href="mailto:$email.getAddress()">$email.getAddress()</a></td>
+          <td>$email.getType()</td>
+        </tr>
+    #end
+    </tbody>
+  </table>
+</div>
 <a href="/contacts/$contact.getID()/addemail">
     <h4>Add a New Email Address</h4>
 </a>
 
-<h3>Mailing Addresses</h3>
-#if ($contact.getAllAddresses())
-  <div class="mail-well">
+<div class="mail well">
   <table class="table table-hover">
-    <tr>
-      <th>Street Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>Type</th>
-    </tr>
+    <thead>
+      <tr>
+        <th>Street Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
     #foreach ($address in $contact.getAllAddresses())
       <tr>
         <td>$address.getStreet()</td>
@@ -67,13 +68,15 @@
         <td>$address.getType()</td>
       </tr>
     #end
-  </div>
-#end
+    </tbody>
+  </table>
+</div>
+
 <a href="/contacts/$contact.getID()/addmailing">
     <h4>Add a New Mailing Address</h4>
 </a>
 
-<h3>birthday</h3>
+<h3>Birthday</h3>
 #if ($contact.getBirthday())
   <h4>$contact.getBirthday().toString()</h4>
 #end

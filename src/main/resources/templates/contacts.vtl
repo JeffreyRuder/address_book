@@ -2,7 +2,13 @@
 <h2>All Contacts</h2>
 <p>Select a contact to review or add contact information.</p>
 <div class="contacts-well">
-  #foreach ($contact in $contacts)
-    <a href="/contacts/$contact.getId()">$contact.getFirst() $contact.getLast()</a>
+  <ul>
+  #foreach ( $key in $contacts.keySet() )
+    <li><a href="/contacts/$key"> $contacts.get($key).getFirst() $contacts.get($key).getLast()</a></li>
   #end
+</ul>
 </div>
+
+<a href="/contacts/new">
+    <h3>Add a New Contact</h3>
+</a>

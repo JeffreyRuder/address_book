@@ -1,0 +1,14 @@
+<h1>Address Book</h1>
+<h2>Add an Email Address for $contact.getFirst() $contact.getLast() </h2>
+
+<form action="/contacts/$contact.getID()" method="post">
+  <div class="form-group">
+    <label for="emailaddress">Email Address</label>
+    <input name="emailaddress" type="email" class="form-control" id="email" min="1" max="12" required>
+  </div>
+  <div class="form-group">
+    <label for="emailtype">Email Address Type</label>
+    <input name="emailtype" type="text" class="form-control" id="emailtype" required placeholder="Personal">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

@@ -98,4 +98,12 @@ public class ContactTest {
     assertEquals(null, contact.getBirthday());
   }
 
+  @Test
+  public void getAllContacts_returnsAllContacts() {
+    Contact johnDoe = new Contact("John", "Doe");
+    Contact janeRoe = new Contact("Jane", "Roe");
+    assertTrue(Contact.getAllContacts().contains(johnDoe));
+    assertTrue(Contact.getAllContacts().contains(janeRoe));
+  }
+
 }
