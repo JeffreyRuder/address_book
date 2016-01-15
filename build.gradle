@@ -3,6 +3,7 @@ apply plugin: 'application'
 
 archivesBaseName = "address_book"
 version = '1.0'
+applicationName = "address_book"
 mainClassName = "App"
 
 repositories {
